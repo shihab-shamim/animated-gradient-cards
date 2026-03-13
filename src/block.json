@@ -1,0 +1,67 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/animated-gradient-cards",
+	"version": "1.0.0",
+	"title": "Animated Gradient Cards",
+	"category": "widgets",
+	"description": "Short description of the Animated Gradient Cards",
+	"keywords": [
+		"Animated Gradient Cards"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"cardsData":{
+			"type":"array",
+			"default":[
+  {
+    "id": 1,
+    "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-1.avif",
+    "title": "MCP, the new standard",
+    "description": "A protocol that lets AI tools speak the same language",
+    "linkUrl": "#",
+    "linkText": "Read more →"
+  },
+  {
+    "id": 2,
+    "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-2.avif",
+    "title": "AI that adapts",
+    "description": "Systems that learn your context and stay one step ahead",
+    "linkUrl": "#",
+    "linkText": "Read more →"
+  },
+  {
+    "id": 3,
+    "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-3.avif",
+    "title": "The interface is changing",
+    "description": "AI moves into the workspace uniting tools and data",
+    "linkUrl": "#",
+    "linkText": "Read more →"
+  }
+]
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}

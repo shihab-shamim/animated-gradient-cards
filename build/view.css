@@ -1,0 +1,175 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+.wp-block-b-blocks-animated-gradient-cards {
+  box-sizing: border-box;
+}
+.wp-block-b-blocks-animated-gradient-cards *,
+.wp-block-b-blocks-animated-gradient-cards ::before,
+.wp-block-b-blocks-animated-gradient-cards ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper {
+  display: grid;
+  place-items: center;
+  /* 4. Card Component */
+  /* 5. Shadow Layers (Elevation Cross-fade) */
+  /* Hover Shadow (Elevation 4) */
+  /* Normal Shadow (Elevation 1) */
+  /* 6. Card Visuals & Image */
+  /* 7. Content Overlay */
+  /* 8. Animated Border Utility */
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .container {
+  width: 100%;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .wrapper {
+  display: grid;
+  gap: 2rem;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .headline {
+  font: 600 1.5rem/2rem system-ui, sans-serif;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card {
+  background-color: oklch(100% 0 271); /* surface-container */
+  padding: 1px;
+  border-radius: 22px;
+  color: inherit;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .state-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .state-layer::before,
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .state-layer::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+  transition: opacity 250ms ease-in-out;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .state-layer::before {
+  box-shadow: 0px 16px 32px -4px oklch(15% 0.01 286/10%), 0px 4px 4px -4px oklch(15% 0.01 286/5%);
+  opacity: 0;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .state-layer::after {
+  box-shadow: 0px 1px 4px oklch(15% 0.01 286/5%);
+  mix-blend-mode: plus-darker;
+  opacity: 1;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .state-layer::before {
+  opacity: 1;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .state-layer::after {
+  opacity: 0;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-wrapper {
+  container-type: size;
+  display: grid;
+  aspect-ratio: 2/3;
+  border-radius: inherit;
+  overflow: clip;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .visual {
+  grid-area: 1/1;
+  overflow: clip;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .img {
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: translate 250ms ease-in;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .img {
+  translate: 0px -15px;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .content {
+  grid-area: 1/1;
+  z-index: 1;
+  display: grid;
+  inline-size: 100%;
+  grid-template-rows: 65cqb 1fr;
+  /* Gradient overlay for readability */
+  background-image: linear-gradient(in oklab, transparent 50cqb, oklch(100% 0 271/80%) 80cqb, oklch(100% 0 271/95%) 90cqb, oklch(100% 0 271) 100cqb);
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .content-wrapper {
+  grid-row-start: 2;
+  display: grid;
+  align-content: space-between;
+  gap: 0.5rem;
+  padding: 0 1.25rem 2rem;
+  transition: translate 250ms ease-in-out;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .content-wrapper {
+  translate: 0px -15px;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .title {
+  font: 600 1.375rem/1.75rem system-ui, sans-serif;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .desc {
+  font: 400 1rem/1.375rem system-ui, sans-serif;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .link {
+  color: oklch(55% 0.13 9); /* primary color */
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 250ms 0.15s ease;
+  position: relative;
+  z-index: 3;
+  border: none;
+  outline: none;
+  text-decoration: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .link {
+    opacity: 1;
+  }
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .bordered::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  opacity: 0;
+  border: 4px solid transparent;
+  transition: opacity 250ms ease-in-out;
+  pointer-events: none;
+  background: conic-gradient(from var(--gradient-angle) in lch, color(display-p3 25% 25% 100%), color(display-p3 100% 85% 30%), color(display-p3 25% 25% 100%)) border-box;
+  mask: linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0);
+  -webkit-mask: linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  animation: rotate-gradient 2.25s linear infinite;
+  animation-play-state: paused;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .bordered:is(:hover, :focus-within, :active)::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+@keyframes rotate-gradient {
+  from {
+    --gradient-angle: 0deg;
+  }
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+/*# sourceMappingURL=view.css.map*/
