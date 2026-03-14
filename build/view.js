@@ -280,6 +280,10 @@ const Style = ({
         row-gap:${styles?.layouts?.rowGap?.desktop}px;
         }
 
+        ${cardSl}.bordered::after {
+          ${styles?.card?.bordered?.background ? `background: ${styles.card.bordered.background};` : ""}
+        }
+
 
 
 

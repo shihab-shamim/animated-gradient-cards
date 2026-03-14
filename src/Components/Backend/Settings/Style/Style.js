@@ -5,6 +5,7 @@ import {
   PanelBody,
   PanelRow,
   __experimentalUnitControl as UnitControl,
+  GradientPicker,
 } from "@wordpress/components";
 import {
   Background,
@@ -163,6 +164,26 @@ const Style = ({ attributes, setAttributes, device }) => {
             })
           }
         />
+        <div className="mt15">
+          <Label>{__("Hover Border Gradient", "b-blocks")}</Label>
+          <GradientPicker
+            value={
+              styles?.card?.bordered?.background ||
+              "conic-gradient(from var(--gradient-angle) in lch, color(display-p3 25% 25% 100%), color(display-p3 100% 85% 30%), color(display-p3 25% 25% 100%)) border-box"
+            }
+            onChange={(value) =>
+              setAttributes({
+                styles: updateData(
+                  styles,
+                  value,
+                  "card",
+                  "bordered",
+                  "background"
+                ),
+              })
+            }
+          />
+        </div>
       </PanelBody>
 
       <PanelBody

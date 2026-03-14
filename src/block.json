@@ -83,6 +83,9 @@
             "bottom": "22px",
             "left": "22px",
             "right": "22px"
+          },
+          "bordered": {
+            "background": "conic-gradient(from var(--gradient-angle) in lch, color(display-p3 25% 25% 100%), color(display-p3 100% 85% 30%), color(display-p3 25% 25% 100%)) border-box"
           }
         },
         "content": {
