@@ -29,15 +29,10 @@
   display: grid;
   gap: 2rem;
 }
-.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .headline {
-  font: 600 1.5rem/2rem system-ui, sans-serif;
-}
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-list {
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-list li {
   display: flex;
@@ -124,8 +119,6 @@
   translate: 0px -15px;
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .link {
-  color: oklch(55% 0.13 9); /* primary color */
-  font-weight: 600;
   opacity: 0;
   transition: opacity 250ms 0.15s ease;
   position: relative;
@@ -135,7 +128,6 @@
   text-decoration: none !important;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .link span {
   display: inline-flex;

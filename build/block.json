@@ -179,6 +179,47 @@
             "lineHeight": "",
             "letterSpace": "0px"
           }
+        },
+        "button": {
+          "color": "#a62138",
+          "icon": {
+            "gap": "6px",
+            "size": "25px"
+          },
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 18,
+              "tablet": 18,
+              "mobile": 18
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "layouts": {
+          "column": {
+            "desktop": 3,
+            "tablet": 2,
+            "mobile": 1
+          },
+          "columnGap": {
+            "desktop": 32,
+            "tablet": 32,
+            "mobile": 32
+          },
+          "rowGap": {
+            "desktop": 32,
+            "tablet": 32,
+            "mobile": 32
+          }
         }
       }
     },

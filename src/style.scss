@@ -28,18 +28,12 @@ $primaryColor: #4527a4;
       gap: 2rem;
     }
 
-    .headline {
-      font:
-        600 1.5rem/2rem system-ui,
-        sans-serif;
-    }
-
     .card-list {
       list-style: none;
       padding: 0;
       display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(3, 1fr);
+      // gap: 2rem;
+      // grid-template-columns: repeat(3, 1fr);
 
       li {
         display: flex;
@@ -166,8 +160,8 @@ $primaryColor: #4527a4;
     }
 
     .link {
-      color: oklch(55% 0.13 9); /* primary color */
-      font-weight: 600;
+      // color: oklch(55% 0.13 9);
+      // font-weight: 600;
       opacity: 0;
       transition: opacity 250ms 0.15s ease;
       position: relative;
@@ -177,7 +171,7 @@ $primaryColor: #4527a4;
       text-decoration: none !important;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      // gap: 6px;
 
       span {
         display: inline-flex;

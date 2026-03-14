@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import {
+  Flex,
   PanelBody,
   PanelRow,
   __experimentalUnitControl as UnitControl,
@@ -250,6 +251,55 @@ const Style = ({ attributes, setAttributes, device }) => {
             })
           }
         />
+      </PanelBody>
+
+      <PanelBody
+        className="bPlPanelBody"
+        title={__("Button", "b-blocks")}
+        initialOpen={false}
+      >
+        <ColorControl
+          label={__("Button Color", "b-blocks")}
+          value={styles?.button?.color}
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "button", "color"),
+            })
+          }
+        />
+        <Typography
+          label={__("Button Typography", "b-blocks")}
+          value={styles?.button?.typo}
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "button", "typo"),
+            })
+          }
+        />
+        <Flex>
+          <Label>{__("Icon Gap", "b-blocks")}</Label>
+          <UnitControl
+            className="mt15"
+            value={styles?.button?.icon?.gap || "6px"}
+            onChange={(value) =>
+              setAttributes({
+                styles: updateData(styles, value, "button", "icon", "gap"),
+              })
+            }
+          />
+        </Flex>
+        <Flex>
+          <Label>{__("Icon Size", "b-blocks")}</Label>
+          <UnitControl
+            className="mt15"
+            value={styles?.button?.icon?.size || "25px"}
+            onChange={(value) =>
+              setAttributes({
+                styles: updateData(styles, value, "button", "icon", "size"),
+              })
+            }
+          />
+        </Flex>
       </PanelBody>
     </>
   );

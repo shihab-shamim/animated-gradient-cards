@@ -17,6 +17,8 @@ const Style = ({ attributes, id }) => {
   const contentSl = `${cardSl} .content`;
   const titleSl = `${contentSl} .title`;
   const descriptionSl = `${contentSl} .desc`;
+  const buttonSl = `${contentSl} .link`;
+  const cardListSl = `${oneCardSectionWrapper} .container .wrapper .card-list`;
 
   const alignment = styles?.container?.alignment || "center";
   let alignmentCss = "";
@@ -34,8 +36,10 @@ const Style = ({ attributes, id }) => {
         __html: `
         	${getTypoCSS("", styles?.content?.title?.typo)?.googleFontLink}
           ${getTypoCSS("", styles?.content?.description?.typo)?.googleFontLink}
-				${getTypoCSS(`${titleSl}`, styles?.title?.typo)?.styles}
+          ${getTypoCSS("", styles?.content?.button?.typo)?.googleFontLink}
+				 ${getTypoCSS(`${titleSl}`, styles?.title?.typo)?.styles}
           ${getTypoCSS(`${descriptionSl}`, styles?.description?.typo)?.styles}
+          ${getTypoCSS(`${buttonSl}`, styles?.button?.typo)?.styles}
 
         ${mainSl} {
           display: flex;
@@ -79,6 +83,28 @@ const Style = ({ attributes, id }) => {
           margin:${getBoxCSS(styles?.description?.margin)};
           color:${styles?.description?.color};
         }
+        ${buttonSl}{
+          color:${styles?.button?.color};
+          ${
+            styles?.button?.icon?.gap
+              ? `gap: ${styles?.button?.icon?.gap};`
+              : ""
+          }
+        svg{
+          ${
+            styles?.button?.icon?.size
+              ? `width: ${styles?.button?.icon?.size};
+           height: ${styles?.button?.icon?.size};`
+              : ""
+          }
+        }
+        }
+
+        ${cardListSl}{
+        grid-template-columns: repeat(${styles?.layouts?.column?.desktop}, 1fr);
+        column-gap:${styles?.layouts?.columnGap?.desktop}px;
+        row-gap:${styles?.layouts?.rowGap?.desktop}px;
+        }
 
 
 
@@ -96,6 +122,11 @@ const Style = ({ attributes, id }) => {
               : ""
           }
 				}
+          ${cardListSl}{
+        grid-template-columns: repeat(${styles?.layouts?.column?.tablet}, 1fr);
+        column-gap:${styles?.layouts?.columnGap?.tablet}px;
+        row-gap:${styles?.layouts?.rowGap?.tablet}px;
+        }
 			}
 
 			${mobileBreakpoint}{
@@ -111,6 +142,11 @@ const Style = ({ attributes, id }) => {
               : ""
           }
 				}
+          ${cardListSl}{
+        grid-template-columns: repeat(${styles?.layouts?.column?.mobile}, 1fr);
+        column-gap:${styles?.layouts?.columnGap?.mobile}px;
+        row-gap:${styles?.layouts?.rowGap?.mobile}px;
+        }
 			}
 
 	`,
