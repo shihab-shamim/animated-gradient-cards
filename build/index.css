@@ -223,6 +223,21 @@ svg.bPlBlockIcon {
   font-size: 13px !important;
   font-weight: 400 !important;
   text-transform: unset !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.bPlPanelBody label .labelPro,
+.bPlDropdownPopover .components-popover__content label .labelPro {
+  margin-left: auto;
+}
+.bPlPanelBody .helpTooltip,
+.bPlDropdownPopover .components-popover__content .helpTooltip {
+  width: 1.5em;
+  max-width: 20px;
+  height: 1.5em;
+  max-height: 20px;
+  cursor: help;
 }
 .bPlPanelBody .components-notice,
 .bPlDropdownPopover .components-popover__content .components-notice {
@@ -295,6 +310,10 @@ svg.bPlBlockIcon {
 }
 .bPlPanelBody .components-toggle-control label,
 .bPlDropdownPopover .components-popover__content .components-toggle-control label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
   margin-bottom: 3px;
 }
 .bPlPanelBody .components-form-toggle .components-form-toggle__track,
@@ -487,12 +506,22 @@ svg.bPlBlockIcon {
 .bPlDropdownPopover .components-popover__content .components-unit-control-wrapper label,
 .bPlDropdownPopover .components-popover__content .components-input-control__label,
 .bPlDropdownPopover .components-popover__content .components-number-control label {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding-bottom: 0 !important;
   margin-right: auto;
   margin-bottom: 0;
+}
+.bPlPanelBody .bPlLabel .labelPro,
+.bPlPanelBody .components-unit-control-wrapper label .labelPro,
+.bPlPanelBody .components-input-control__label .labelPro,
+.bPlPanelBody .components-number-control label .labelPro,
+.bPlDropdownPopover .components-popover__content .bPlLabel .labelPro,
+.bPlDropdownPopover .components-popover__content .components-unit-control-wrapper label .labelPro,
+.bPlDropdownPopover .components-popover__content .components-input-control__label .labelPro,
+.bPlDropdownPopover .components-popover__content .components-number-control label .labelPro {
+  margin-left: auto;
 }
 .bPlPanelBody .bPlResetVal,
 .bPlDropdownPopover .components-popover__content .bPlResetVal {
@@ -684,6 +713,10 @@ svg.bPlBlockIcon {
   justify-content: center;
 }
 
+.bPlPanelBody .components-base-control .components-base-control__field .components-toggle-group-control {
+  border-width: 1px !important;
+  border-color: #146EF5 !important;
+}
 .bPlPanelBody .components-base-control .components-base-control__field .components-toggle-group-control::before {
   background: #146EF5;
 }
@@ -1087,6 +1120,16 @@ svg.bPlBlockIcon {
 }
 .bPlIconLibrary .panel-icon svg {
   height: 18px;
+}
+.bPlIconLibrary .bPlIconLibrary-removeIconBtn {
+  background: #da5757;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.bPlIconLibrary .bPlIconLibrary-removeIconBtn:hover {
+  opacity: 0.8;
+  background: #da5757 !important;
+  color: white !important;
 }
 .bPlIconLibrary .bPlIconLibraryModalWrapper {
   background: rgba(0, 0, 0, 0.158);
@@ -1704,12 +1747,12 @@ svg.bPlBlockIcon {
   font-weight: 500;
   width: 100%;
   min-height: 44px;
-  background-color: rgba(68, 39, 164, 0.1450980392);
+  background-color: rgba(20, 110, 245, 0.145);
   position: relative;
   padding: 5px 10px;
-  border: 1px solid rgba(68, 39, 165, 0.3137254902);
+  border: 1px solid rgba(20, 110, 245, 0.314);
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(68, 39, 165, 0.1450980392);
+  box-shadow: 0 2px 4px rgba(20, 110, 245, 0.145);
   cursor: pointer;
   transition: 0.3s;
 }

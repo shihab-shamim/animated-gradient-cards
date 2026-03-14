@@ -173,6 +173,14 @@ width: 100%;
   border: none;
   outline: none;
   text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {

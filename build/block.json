@@ -24,29 +24,41 @@
       "default": [
         {
           "id": 1,
-          "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-1.avif",
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-1.avif"
+          },
           "title": "MCP, the new standard",
           "description": "A protocol that lets AI tools speak the same language",
           "linkUrl": "#",
-          "linkText": "Read more →"
+          "linkText": "Read more "
         },
         {
           "id": 2,
-          "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-2.avif",
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-2.avif"
+          },
           "title": "AI that adapts",
           "description": "Systems that learn your context and stay one step ahead",
           "linkUrl": "#",
-          "linkText": "Read more →"
+          "linkText": "Read more"
         },
         {
           "id": 3,
-          "image": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-3.avif",
+          "image": {
+            "url": "https://raw.githubusercontent.com/mobalti/modern-web-ui/refs/heads/main/animated-border-cards/images/img-3.avif"
+          },
           "title": "The interface is changing",
           "description": "AI moves into the workspace uniting tools and data",
           "linkUrl": "#",
-          "linkText": "Read more →"
+          "linkText": "Read more"
         }
       ]
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5 12H19M19 12L13 6M19 12L13 18\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+      }
     }
   },
   "supports": {

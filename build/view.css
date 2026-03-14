@@ -135,6 +135,13 @@
   border: none;
   outline: none;
   text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .link span {
+  display: inline-flex;
+  align-items: center;
 }
 @media (hover: hover) and (pointer: fine) {
   .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .link {

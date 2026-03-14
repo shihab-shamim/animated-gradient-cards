@@ -1,5 +1,5 @@
 const OneCard = ({ attributes }) => {
-  const { cardsData } = attributes;
+  const { cardsData=[],options={} } = attributes;
 
 
   return (
@@ -14,7 +14,7 @@ const OneCard = ({ attributes }) => {
                   <div className="state-layer"></div>
                   <div className="card-wrapper">
                     <div className="visual">
-                      <img className="img" src={card.image} alt="" />
+                      <img className="img" src={card.image?.url} alt="" />
                     </div>
                     <div className="content">
                       <div className="content-wrapper">
@@ -22,9 +22,13 @@ const OneCard = ({ attributes }) => {
                           <h3 className="title">{card.title}</h3>
                           <p className="desc">{card.description}</p>
                         </div>
-                        <a href={card.linkUrl} target="_blank" rel="noopener noreferrer" className="link">
+                        
+                          <a href={card.linkUrl} target="_blank" rel="noopener noreferrer" className="link">
                           {card.linkText}
+                          <span dangerouslySetInnerHTML={{__html:options.icon}}></span>
                         </a>
+                        
+                        
                       </div>
                     </div>
                   </div>

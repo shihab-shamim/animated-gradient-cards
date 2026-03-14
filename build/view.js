@@ -241,7 +241,8 @@ const OneCard = ({
   attributes
 }) => {
   const {
-    cardsData
+    cardsData = [],
+    options = {}
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: "one-card-section-wrapper"
@@ -263,7 +264,7 @@ const OneCard = ({
     className: "visual"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "img",
-    src: card.image,
+    src: card.image?.url,
     alt: ""
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "content"
@@ -280,7 +281,11 @@ const OneCard = ({
     target: "_blank",
     rel: "noopener noreferrer",
     className: "link"
-  }, card.linkText)))))))))));
+  }, card.linkText, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    dangerouslySetInnerHTML: {
+      __html: options.icon
+    }
+  }))))))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OneCard);
 
