@@ -13,6 +13,7 @@
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper {
   display: grid;
   place-items: center;
+  overflow: hidden;
   /* 4. Card Component */
   /* 5. Shadow Layers (Elevation Cross-fade) */
   /* Hover Shadow (Elevation 4) */
@@ -38,12 +39,19 @@
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
 }
+.wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-list li {
+  display: flex;
+  flex-direction: column;
+}
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card {
   background-color: oklch(100% 0 271); /* surface-container */
   padding: 1px;
   border-radius: 22px;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   position: relative;
   text-decoration: none;
   outline: none;
@@ -78,11 +86,11 @@
   opacity: 0;
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card-wrapper {
-  container-type: size;
   display: grid;
-  aspect-ratio: 2/3;
   border-radius: inherit;
   overflow: clip;
+  height: 100%;
+  width: 100%;
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .visual {
   grid-area: 1/1;
@@ -102,18 +110,18 @@
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .content {
   grid-area: 1/1;
   z-index: 1;
-  display: grid;
-  inline-size: 100%;
-  grid-template-rows: 65cqb 1fr;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   /* Gradient overlay for readability */
-  background-image: linear-gradient(in oklab, transparent 50cqb, oklch(100% 0 271/80%) 80cqb, oklch(100% 0 271/95%) 90cqb, oklch(100% 0 271) 100cqb);
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 40%, oklch(100% 0 271/80%) 65%, oklch(100% 0 271/95%) 85%, oklch(100% 0 271) 100%);
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .content-wrapper {
-  grid-row-start: 2;
-  display: grid;
-  align-content: space-between;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  padding: 0 1.25rem 2rem;
+  padding: 180px 1.25rem 2rem;
   transition: translate 250ms ease-in-out;
 }
 .wp-block-b-blocks-animated-gradient-cards .one-card-section-wrapper .card:is(:hover, :focus-visible, :active) .content-wrapper {

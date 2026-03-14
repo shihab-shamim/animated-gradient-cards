@@ -19,14 +19,14 @@ const OneCard = ({ attributes }) => {
                     <div className="content">
                       <div className="content-wrapper">
                         <div className="meta">
-                          <h3 className="title">{card.title}</h3>
-                          <p className="desc">{card.description}</p>
+                          {options.isTitle && <h3 className="title">{card.title}</h3>}
+                          {options.isDescription && <p className="desc">{card.description}</p>}
                         </div>
                         
-                          <a href={card.linkUrl} target="_blank" rel="noopener noreferrer" className="link">
+                          {options.isButton && <a href={card.linkUrl} target={options.isOpenLink ? "_blank" : "_self"} rel="noopener noreferrer" className="link">
                           {card.linkText}
                           <span dangerouslySetInnerHTML={{__html:options.icon}}></span>
-                        </a>
+                        </a>}
                         
                         
                       </div>

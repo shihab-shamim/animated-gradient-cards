@@ -2,35 +2,121 @@ import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import {
   PanelBody,
-  __experimentalBoxControl as BoxControl,
+  PanelRow,
+  __experimentalUnitControl as UnitControl,
 } from "@wordpress/components";
-import { ColorsControl } from "../../../../../../bpl-tools/Components";
+import {
+  Background,
+  BButtonGroup,
+  BoxControl,
+  Device,
+  Label,
+} from "../../../../../../bpl-tools/Components";
+import { updateData } from "../../../../../../bpl-tools/utils/functions";
 
-const Style = ({ attributes, setAttributes }) => {
-  const { colors } = attributes;
-  const [values, setValues] = useState({
-    top: "50px",
-    left: "10px",
-    right: "10px",
-    bottom: "50px",
-  });
-
-
+const Style = ({ attributes, setAttributes, device }) => {
+  const { styles = {} } = attributes;
+  console.log(styles);
 
   return (
     <>
       <PanelBody
-      
         className="bPlPanelBody"
-        title={__("Purpose styles title", "b-blocks")}
+        title={__("Container", "b-blocks")}
         initialOpen={false}
       >
-        <ColorsControl
-          value={colors}
-          onChange={(val) => setAttributes({ colors: val })}
-          defaults={{ color: "black", bg: "#B1C5A4" }}
+        <UnitControl
+          label={__("Width", "b-blocks")}
+          value={styles?.container?.width || "100%"}
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "width"),
+            })
+          }
         />
-        <BoxControl values={values} onChange={setValues} />
+        <Background
+          value={styles?.container?.bg}
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "bg"),
+            })
+          }
+        />
+        <PanelRow>
+          <Label>{__("Margin", "b-blocks")}</Label>
+          <Device />
+        </PanelRow>
+
+        <BoxControl
+          className="mt15"
+          label={__("", "b-blocks")}
+          values={
+            styles?.container?.margin[device] || {
+              top: "0px",
+              bottom: "0px",
+              left: "0px",
+              right: "0px",
+            }
+          }
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "margin", device),
+            })
+          }
+        />
+        <PanelRow>
+          <Label>{__("Padding", "b-blocks")}</Label>
+          <Device />
+        </PanelRow>
+        <BoxControl
+          className="mt15"
+          label={__("", "b-blocks")}
+          values={
+            styles?.container?.padding[device] || {
+              top: "0px",
+              bottom: "0px",
+              left: "0px",
+              right: "0px",
+            }
+          }
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "padding", device),
+            })
+          }
+        />
+        <BoxControl
+          className="mt15"
+          label={__("Radius", "b-blocks")}
+          values={
+            styles?.container?.radius || {
+              top: "0px",
+              bottom: "0px",
+              left: "0px",
+              right: "0px",
+            }
+          }
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "radius"),
+            })
+          }
+        />
+        <BButtonGroup
+          className="mt15"
+          label={__("Alignment", "b-blocks")}
+          options={[
+            { label: "Left", value: "left" },
+            { label: "Center", value: "center" },
+            { label: "Right", value: "right" },
+          ]}
+          value={styles?.container?.alignment || "center"}
+          onChange={(value) =>
+            setAttributes({
+              styles: updateData(styles, value, "container", "alignment"),
+            })
+          }
+        />
       </PanelBody>
     </>
   );

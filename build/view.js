@@ -196,7 +196,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+/* harmony import */ var _bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/utils/data */ "../bpl-tools/utils/data.js");
+/* harmony import */ var _bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/utils/getCSS */ "../bpl-tools/utils/getCSS.js");
+
 
 
 const Style = ({
@@ -204,17 +206,48 @@ const Style = ({
   id
 }) => {
   const {
-    colors
+    styles = {}
   } = attributes;
   const mainSl = `#${id}`;
-  const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  const oneCardSectionWrapper = `${mainSl} .one-card-section-wrapper`;
+  const alignment = styles?.container?.alignment || "center";
+  let alignmentCss = "";
+  if (alignment === "center") {
+    alignmentCss = "justify-content: center;";
+  } else if (alignment === "right") {
+    alignmentCss = "justify-content: flex-end;";
+  } else if (alignment === "left") {
+    alignmentCss = "justify-content: flex-start;";
+  }
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		
-		${blockSl} p{
-			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_1__.getColorsCSS)(colors)}
-		}
+        ${mainSl} {
+          display: flex;
+          ${alignmentCss}
+          
+        }
+		${oneCardSectionWrapper}{
+	     ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.container?.bg)}
+		 ${styles?.container?.padding?.desktop ? `padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.padding.desktop)};` : ""}
+		 ${styles?.container?.width ? `width: ${styles.container.width};` : ""}
+		 ${styles?.container?.margin?.desktop ? `margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.margin.desktop)};` : ""}
+		 ${styles?.container?.radius ? `border-radius: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.radius)};` : ""}
+			}
+
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
+				${oneCardSectionWrapper}{
+					${styles?.container?.padding?.tablet ? `padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.padding.tablet)};` : ""}
+					${styles?.container?.margin?.tablet ? `margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.margin.tablet)};` : ""}
+				}
+			}
+
+			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{
+				${oneCardSectionWrapper}{
+					${styles?.container?.padding?.mobile ? `padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.padding.mobile)};` : ""}
+					${styles?.container?.margin?.mobile ? `margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.margin.mobile)};` : ""}
+				}
+			}
 
 	`
     }
@@ -272,13 +305,13 @@ const OneCard = ({
     className: "content-wrapper"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "meta"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, options.isTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "title"
-  }, card.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, card.title), options.isDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "desc"
-  }, card.description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, card.description)), options.isButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     href: card.linkUrl,
-    target: "_blank",
+    target: options.isOpenLink ? "_blank" : "_self",
     rel: "noopener noreferrer",
     className: "link"
   }, card.linkText, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
