@@ -210,6 +210,10 @@ const Style = ({
   } = attributes;
   const mainSl = `#${id}`;
   const oneCardSectionWrapper = `${mainSl} .one-card-section-wrapper`;
+  const cardSl = `${oneCardSectionWrapper} .container .wrapper .card-list li .card`;
+  const contentSl = `${cardSl} .content`;
+  const titleSl = `${contentSl} .title`;
+  const descriptionSl = `${contentSl} .desc`;
   const alignment = styles?.container?.alignment || "center";
   let alignmentCss = "";
   if (alignment === "center") {
@@ -222,6 +226,11 @@ const Style = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+        	${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.content?.title?.typo)?.googleFontLink}
+          ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.content?.description?.typo)?.googleFontLink}
+				${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${titleSl}`, styles?.title?.typo)?.styles}
+          ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(`${descriptionSl}`, styles?.description?.typo)?.styles}
+
         ${mainSl} {
           display: flex;
           ${alignmentCss}
@@ -234,6 +243,27 @@ const Style = ({
 		 ${styles?.container?.margin?.desktop ? `margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.margin.desktop)};` : ""}
 		 ${styles?.container?.radius ? `border-radius: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles.container.radius)};` : ""}
 			}
+
+      ${cardSl}{
+        padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.padding)};
+        border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.radius)};
+      }
+
+      ${contentSl} {
+        ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.content?.overlay)}
+      }
+        ${titleSl}{
+          margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.title?.margin)};
+          color:${styles?.title?.color};
+          
+        }
+        ${descriptionSl}{
+          margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.description?.margin)};
+          color:${styles?.description?.color};
+        }
+
+
+
 
 			${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 				${oneCardSectionWrapper}{

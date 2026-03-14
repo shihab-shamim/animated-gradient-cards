@@ -5,7 +5,7 @@ import {
 import {
   getBackgroundCSS,
   getBoxCSS,
-  getColorsCSS,
+  getTypoCSS,
 } from "../../../../bpl-tools/utils/getCSS";
 
 const Style = ({ attributes, id }) => {
@@ -13,6 +13,10 @@ const Style = ({ attributes, id }) => {
 
   const mainSl = `#${id}`;
   const oneCardSectionWrapper = `${mainSl} .one-card-section-wrapper`;
+  const cardSl = `${oneCardSectionWrapper} .container .wrapper .card-list li .card`;
+  const contentSl = `${cardSl} .content`;
+  const titleSl = `${contentSl} .title`;
+  const descriptionSl = `${contentSl} .desc`;
 
   const alignment = styles?.container?.alignment || "center";
   let alignmentCss = "";
@@ -28,6 +32,11 @@ const Style = ({ attributes, id }) => {
     <style
       dangerouslySetInnerHTML={{
         __html: `
+        	${getTypoCSS("", styles?.content?.title?.typo)?.googleFontLink}
+          ${getTypoCSS("", styles?.content?.description?.typo)?.googleFontLink}
+				${getTypoCSS(`${titleSl}`, styles?.title?.typo)?.styles}
+          ${getTypoCSS(`${descriptionSl}`, styles?.description?.typo)?.styles}
+
         ${mainSl} {
           display: flex;
           ${alignmentCss}
@@ -52,6 +61,27 @@ const Style = ({ attributes, id }) => {
          : ""
      }
 			}
+
+      ${cardSl}{
+        padding:${getBoxCSS(styles?.card?.padding)};
+        border-radius:${getBoxCSS(styles?.card?.radius)};
+      }
+
+      ${contentSl} {
+        ${getBackgroundCSS(styles?.content?.overlay)}
+      }
+        ${titleSl}{
+          margin:${getBoxCSS(styles?.title?.margin)};
+          color:${styles?.title?.color};
+          
+        }
+        ${descriptionSl}{
+          margin:${getBoxCSS(styles?.description?.margin)};
+          color:${styles?.description?.color};
+        }
+
+
+
 
 			${tabBreakpoint}{
 				${oneCardSectionWrapper}{

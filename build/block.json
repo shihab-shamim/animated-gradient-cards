@@ -107,6 +107,78 @@
           },
           "width": "100%",
           "alignment": "center"
+        },
+        "card": {
+          "padding": {
+            "top": "1px",
+            "bottom": "1px",
+            "left": "1px",
+            "right": "1px"
+          },
+          "radius": {
+            "top": "22px",
+            "bottom": "22px",
+            "left": "22px",
+            "right": "22px"
+          }
+        },
+        "content": {
+          "overlay": {
+            "type": "gradient",
+            "gradient": "linear-gradient(to bottom, transparent 0%, transparent 40%, oklch(100% 0 271 / 80%) 65%, oklch(100% 0 271 / 95%) 85%, oklch(100% 0 271) 100%)"
+          }
+        },
+        "title": {
+          "margin": {
+            "top": "",
+            "bottom": "",
+            "left": "",
+            "right": ""
+          },
+          "color": "#000000",
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "500",
+            "fontVariant": "500",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 21,
+              "tablet": 21,
+              "mobile": 21
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
+        },
+        "description": {
+          "margin": {
+            "top": "",
+            "bottom": "",
+            "left": "",
+            "right": ""
+          },
+          "color": "#000000",
+          "typo": {
+            "fontFamily": "",
+            "fontCategory": "",
+            "fontWeight": "",
+            "fontVariant": "",
+            "isUploadFont": false,
+            "fontSize": {
+              "desktop": 16,
+              "tablet": 16,
+              "mobile": 16
+            },
+            "fontStyle": "normal",
+            "textTransform": "none",
+            "textDecoration": "none",
+            "lineHeight": "",
+            "letterSpace": "0px"
+          }
         }
       }
     },
