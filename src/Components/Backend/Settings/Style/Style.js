@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { __ } from "@wordpress/i18n";
 import {
   Flex,
@@ -20,7 +19,6 @@ import { updateData } from "../../../../../../bpl-tools/utils/functions";
 
 const Style = ({ attributes, setAttributes, device }) => {
   const { styles = {} } = attributes;
-  console.log(styles);
 
   return (
     <>
@@ -178,7 +176,7 @@ const Style = ({ attributes, setAttributes, device }) => {
                   value,
                   "card",
                   "bordered",
-                  "background"
+                  "background",
                 ),
               })
             }

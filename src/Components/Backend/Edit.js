@@ -8,7 +8,6 @@ import { RichTextControl } from "../../utils/options";
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device } = props;
-  const { purposeType } = attributes;
 
   return (
     <>
