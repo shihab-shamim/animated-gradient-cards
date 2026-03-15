@@ -4,6 +4,7 @@ import { withSelect } from "@wordpress/data";
 import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import OneCard from "../Common/cards/OneCard";
+import { RichTextControl } from "../../utils/options";
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device } = props;
@@ -15,7 +16,11 @@ const Edit = (props) => {
 
       <div {...useBlockProps()}>
         <Style attributes={attributes} id={`block-${clientId}`} />
-        <OneCard attributes={attributes} />
+        <OneCard
+          attributes={attributes}
+          RichTextControl={RichTextControl}
+          setAttributes={setAttributes}
+        />
       </div>
     </>
   );
