@@ -85,9 +85,10 @@ const Style = ({ attributes, id }) => {
         }
         ${buttonSl}{
           color:${styles?.button?.color};
+      
           ${
             styles?.button?.icon?.gap
-              ? `gap: ${styles?.button?.icon?.gap};`
+              ? `gap: ${styles?.button?.icon?.gap} !important;`
               : ""
           }
         svg{

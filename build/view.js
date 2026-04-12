@@ -267,7 +267,8 @@ const Style = ({
         }
         ${buttonSl}{
           color:${styles?.button?.color};
-          ${styles?.button?.icon?.gap ? `gap: ${styles?.button?.icon?.gap};` : ""}
+      
+          ${styles?.button?.icon?.gap ? `gap: ${styles?.button?.icon?.gap} !important;` : ""}
         svg{
           ${styles?.button?.icon?.size ? `width: ${styles?.button?.icon?.size};
            height: ${styles?.button?.icon?.size};` : ""}
