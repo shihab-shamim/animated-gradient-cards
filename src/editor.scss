@@ -3,8 +3,9 @@
   //     margin-top: -33px;
   //   }
   .oneCardEditorButton {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    gap: inherit;
   }
  a{
    

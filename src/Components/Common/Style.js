@@ -101,6 +101,14 @@ const Style = ({ attributes, id }) => {
         }
         }
 
+        ${contentSl} .oneCardEditorButton{
+          ${
+            styles?.button?.icon?.gap
+              ? `gap: ${styles?.button?.icon?.gap} !important;`
+              : ""
+          }
+        }
+
         ${cardListSl}{
         grid-template-columns: repeat(${styles?.layouts?.column?.desktop}, 1fr);
         column-gap:${styles?.layouts?.columnGap?.desktop}px;
